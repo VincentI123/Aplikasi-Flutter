@@ -1,0 +1,117 @@
+# PENJELASAN APLIKASI MANAJEMEN JADWAL GURU
+
+## Deskripsi Umum
+Aplikasi ini adalah sistem manajemen jadwal untuk guru yang dikembangkan menggunakan framework Flutter. Aplikasi ini memungkinkan pengguna untuk mengelola jadwal mengajar guru, termasuk informasi tentang mata pelajaran, murid, hari, dan waktu mengajar.
+
+## Fitur Utama
+1. **Melihat Daftar Jadwal**
+   - Menampilkan daftar jadwal guru yang tersimpan dalam database
+   - Mengurutkan jadwal berdasarkan nama guru (A-Z)
+   - Fitur refresh untuk memperbarui data
+
+2. **Filter Jadwal**
+   - Filter berdasarkan hari (Senin-Minggu atau Semua Hari)
+   - Filter berdasarkan jam mengajar (berbagai slot waktu atau Semua Jam)
+
+3. **Manajemen Jadwal**
+   - Menambahkan jadwal baru
+   - Mengedit jadwal yang sudah ada
+   - Menghapus jadwal
+
+## Struktur Aplikasi
+
+### Halaman Utama (Jadwal Page)
+Halaman ini menampilkan daftar jadwal guru dengan fitur:
+- Filter dropdown untuk hari dan jam
+- Daftar jadwal dalam bentuk kartu (card)
+- Tombol floating action untuk menambah jadwal baru
+- Fitur pull-to-refresh untuk memperbarui data
+
+### Komponen Jadwal
+Setiap jadwal ditampilkan dalam bentuk kartu yang berisi:
+- Nama guru
+- Mata pelajaran
+- Daftar murid
+- Tombol edit dan hapus
+
+### Halaman Tambah Jadwal
+Halaman untuk menambahkan jadwal baru dengan form input untuk:
+- Nama guru
+- Mata pelajaran
+- Daftar murid
+- Hari mengajar
+- Jam mengajar
+
+### Halaman Edit Jadwal
+Halaman untuk mengubah jadwal yang sudah ada dengan form yang sudah terisi data sebelumnya.
+
+## Teknologi dan Implementasi
+
+### Framework dan Bahasa
+- Flutter (UI Framework)
+- Dart (Bahasa Pemrograman)
+
+### Manajemen State
+- StatefulWidget untuk manajemen state lokal
+- setState untuk memperbarui UI
+
+### Penyimpanan Data
+- Database lokal menggunakan Repository pattern
+- Operasi CRUD (Create, Read, Update, Delete) untuk jadwal
+
+### Komponen UI
+- Material Design components (Card, DropdownButton, IconButton, dll)
+- Custom widgets untuk item jadwal
+- RefreshIndicator untuk fitur pull-to-refresh
+
+## Alur Penggunaan
+
+1. **Melihat Jadwal**
+   - Buka aplikasi untuk melihat daftar jadwal
+   - Gunakan dropdown filter untuk menyaring berdasarkan hari atau jam
+   - Tarik layar ke bawah untuk memperbarui data
+
+2. **Menambah Jadwal**
+   - Tekan tombol + (floating action button)
+   - Isi form dengan data jadwal baru
+   - Simpan jadwal
+
+3. **Mengedit Jadwal**
+   - Tekan ikon edit (pensil) pada jadwal yang ingin diubah
+   - Ubah data pada form
+   - Simpan perubahan
+
+4. **Menghapus Jadwal**
+   - Tekan ikon hapus (tempat sampah) pada jadwal yang ingin dihapus
+   - Konfirmasi penghapusan
+
+## Fitur Teknis
+
+### Pemfilteran Data
+Aplikasi menggunakan metode filter untuk menyaring jadwal berdasarkan hari dan jam. Jadwal dapat memiliki beberapa hari dan jam yang disimpan sebagai string dengan pemisah koma.
+
+### Pengurutan Data
+Daftar jadwal diurutkan berdasarkan nama guru secara alfabetis untuk memudahkan pencarian.
+
+### Notifikasi
+Aplikasi menggunakan SnackBar untuk memberikan notifikasi kepada pengguna, seperti konfirmasi penghapusan jadwal atau pesan error.
+
+### Navigasi
+Navigasi antar halaman menggunakan Navigator dengan MaterialPageRoute, dengan callback untuk memperbarui data setelah kembali dari halaman tambah atau edit.
+
+## Pengembangan Lebih Lanjut
+
+1. **Fitur Pencarian**
+   - Menambahkan fitur pencarian berdasarkan nama guru atau mata pelajaran
+
+2. **Autentikasi Pengguna**
+   - Menambahkan sistem login untuk membatasi akses
+
+3. **Sinkronisasi Cloud**
+   - Menyimpan data di cloud untuk akses dari berbagai perangkat
+
+4. **Notifikasi Pengingat**
+   - Menambahkan fitur pengingat jadwal
+
+5. **Ekspor Data**
+   - Fitur untuk mengekspor jadwal dalam format PDF atau Excel
