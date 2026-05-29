@@ -62,7 +62,6 @@ Dibangun menggunakan **Flutter** dengan penyimpanan data lokal menggunakan **SQL
   </tr>
 </table>
 
-> **📌 Catatan:** Tambahkan screenshot ke folder `screenshots/` dengan nama file sesuai di atas.
 
 ---
 
